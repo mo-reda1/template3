@@ -1,0 +1,242 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #10CAB7
+}
+
+body {
+    font-family: "work sans", "sans-serif";
+}
+
+.header {
+    /* background-color: #eee; */
+}
+
+.contaner {
+    width: 600px;
+    margin: auto;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .contaner {
+        width: 90%;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .contaner {
+        width: 90%;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .contaner {
+        width: 80%;
+    }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .contaner {
+        width: 70%;
+    }
+}
+
+.header {
+    padding: 20px;
+}
+.header .links{
+    position: relative;
+}
+
+.header .contaner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 120px;
+}
+
+.header  .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+}
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 3px;
+    width: 20px;
+    transition: .3s
+    ;
+}
+.header  .links .icon span:first-child{
+    width: 100%;
+}
+.header  .links .icon span:nth-child(2){
+    width: 60%;
+}
+.header  .links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+.header  .links .icon span:last-child{
+    width: 100%;
+}
+.header  .links ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    background-color: #eee;
+    min-width: 180px;
+    top: calc(100% + 20px);
+    display: none;
+    z-index: 1;
+}
+.header  .links ul::before{
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #eee transparent ;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+.header  .links:hover ul{
+    display: block;
+}
+.header  .links ul a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+.header  .links ul li a:hover{
+    padding-left: 25px;
+}
+.header  .links ul li:not(:last-child) a{
+    border-bottom: 1px solid black;
+}
+/* end header */
+/* start feauturs */
+.landing{
+    background-image: url(../images/mountain-imege-black-and-white.jpg);
+    background-size: cover;
+    height: calc(100vh - 88px);
+    position: relative;
+}
+.feauturs i{
+    color: var(--main-color);
+}
+.landing .intro-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 300px;
+    max-width: 100%;
+}
+.landing .intro-text h1{
+    margin: 0;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.feauturs{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.feauturs .contaner{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+    
+}
+
+.feauturs{
+    display: grid ;
+    background-color: #e6e5e5;
+}
+.feauturs .feat{
+    text-align: center;
+    padding: 20px;
+}
+.feauturs h3{
+    font-weight: 800;
+}
+.feauturs p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+/* end feauturs */
+/* start services */
+.special-heading{
+    color: #efefee;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0;
+}
+.special-heading + p{
+    color: #777;
+    margin: -30px 0 0 ;
+    text-align: center;
+}
+.services .services-conent{
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px , 1fr));
+    gap: 20px;
+}
+.services .services-conent .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+@media(max-width:767px){
+    .services .services-conent .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .services-conent .srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .services-conent .srv .text{
+    flex: 1;
+}
+.services .services-conent .srv h3{
+    margin: 0 0 20px;
+}
+.services .services-conent .srv p{
+    line-height: 1.4;
+    font-weight: 300;
+}
+.services .services-conent .imege img{
+    text-align: center;
+    width: 260px;
+    height: auto;
+    position: relative;
+}
+/* end services */
+.services .services-conent .imege img::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    background-color: rgb(14, 9, 36);
+    top: -50px;
+    right: -20px;
+    z-index: -1;
+}
